@@ -1,0 +1,411 @@
+// // import React, { useState } from 'react';
+// // import './Header.css';
+// // import { FaHome, FaServicestack, FaBriefcase, FaImages, FaInfoCircle, FaGlobe } from 'react-icons/fa';
+
+// // const Header = () => {
+// //   const [lang, setLang] = useState('de');
+
+// //   return (
+// //     <header className="header">
+// //       <div className="logo-slogan">
+// //         <a href="#home" className="logo-link">
+// //           <img src="/logo.svg" alt="Logo" className="logo" />
+// //           <span className="slogan">Your Trusted Partner</span>
+// //         </a>
+// //       </div>
+// //       <nav className="nav-menu">
+// //         <a href="#home"> Home</a>
+// //         <a href="#services"> Services</a>
+// //         <a href="#career"> Career</a>
+// //         {/* <a href="#portfolio"> Portfolio</a> */}
+// //         <a href="#about"> About Us</a>
+// //       </nav>
+// //       <div className="lang-switch">
+// //         <div className="lang-dropdown">
+// //           <button className="lang-btn" aria-label="Switch Language">
+// //             {/* <FaGlobe size={22} /> */}
+// //             <span className="lang-label">{lang === 'de' ? 'Deutsch' : 'English'}</span>
+// //           </button>
+// //           <div className="lang-options">
+// //             <button
+// //               className={`lang-option${lang === 'de' ? ' active' : ''}`}
+// //               onClick={() => setLang('de')}
+// //             >
+// //               Deutsch
+// //             </button>
+// //             <button
+// //               className={`lang-option${lang === 'en' ? ' active' : ''}`}
+// //               onClick={() => setLang('en')}
+// //             >
+// //               English
+// //             </button>
+// //           </div>
+// //         </div>
+// //       </div>
+// //     </header>
+// //   );
+// // };
+
+// // export default Header;
+
+
+
+// import React, { useState } from 'react';
+// import './Header.css';
+// import {FaGlobe } from 'react-icons/fa';
+// import { useTranslation } from 'react-i18next';
+
+// const Header = () => {
+//   const { t } = useTranslation();
+
+//   return (
+//     <header className="header">
+//       <nav className="nav-menu nav-left">
+//         <a href="/" className='made-color'>{t('home')}</a>
+//         <a href="/services" className='made-color'>{t('services')}</a>
+//       </nav>
+//       <div className="logo-slogan">
+//         <a href="#home" className="logo-link">
+//           <img src="/logo.png" alt="Logo" className="logo" />
+//           {/* <span className="slogan">Your Trusted Partner</span> */}
+//         </a>
+//       </div>
+//       <nav className="nav-menu nav-right">
+//         <a href="/career" className='made-color'>{t('career')}</a>
+//         <a href="/about" className='made-color'>{t('about')}</a>
+//         <div className="lang-switch">
+//           <div className="lang-dropdown">
+//             <button className="lang-btn" aria-label="Switch Language">
+//                  <FaGlobe size={16} /> 
+//               <span className="lang-label">{lang === 'de' ? 'Deutsch' : 'English'}</span>
+//             </button>
+//             <div className="lang-options">
+//               <button
+//                 className={`lang-option${lang === 'de' ? ' active' : ''}`}
+//                 onClick={() => setLang('de')}
+//               >
+//                 Deutsch
+//               </button>
+//               <button
+//                 className={`lang-option${lang === 'en' ? ' active' : ''}`}
+//                 onClick={() => setLang('en')}
+//               >
+//                 English
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+
+import React from 'react';
+import './Header.css';
+import { FaGlobe } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+
+const Header = () => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+
+  const switchLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <header className="header">
+      <nav className="nav-menu nav-left">
+        <a href="/" className='made-color'>{t('home')}</a>
+        <a href="/services" className='made-color'>{t('services')}</a>
+      </nav>
+
+      <div className="logo-slogan">
+        <a href="/" className="logo-link">
+          <img src="/logo.png" alt="Logo" className="logo" />
+        </a>
+      </div>
+
+      <nav className="nav-menu nav-right">
+        <a href="/career" className='made-color'>{t('career')}</a>
+        <a href="/about" className='made-color'>{t('about')}</a>
+
+        <div className="lang-switch">
+          <div className="lang-dropdown">
+            <button className="lang-btn" aria-label="Switch Language">
+              <FaGlobe size={16} />
+              <span className="lang-label">
+                {currentLang === 'de' ? 'Deutsch' : 'English'}
+              </span>
+            </button>
+
+            <div className="lang-options">
+              <button
+                className={`lang-option${currentLang === 'de' ? ' active' : ''}`}
+                onClick={() => switchLanguage('de')}
+              >
+                Deutsch
+              </button>
+              <button
+                className={`lang-option${currentLang === 'en' ? ' active' : ''}`}
+                onClick={() => switchLanguage('en')}
+              >
+                English
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
+
+
+second Backup 
+
+import React from 'react';
+import './Header.css';
+import { FaGlobe } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+
+const Header = () => {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+
+  const switchLanguage = (lng) => i18n.changeLanguage(lng);
+
+  const navLinksLeft = [
+    { href: '/', label: t('home') },
+    { href: '/services', label: t('services') },
+  ];
+
+  const navLinksRight = [
+    { href: '/career', label: t('career') },
+    { href: '/about', label: t('about') },
+  ];
+
+  const languages = [
+    { code: 'de', label: 'Deutsch' },
+    { code: 'en', label: 'English' },
+  ];
+
+  return (
+    <header className="header">
+      <nav className="nav-menu nav-left">
+        {navLinksLeft.map(({ href, label }) => (
+          <a key={href} href={href} className="made-color">
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <div className="logo-slogan">
+        <a href="/" className="logo-link">
+          <img src="/logo.png" alt="Logo" className="logo" />
+        </a>
+      </div>
+
+      <nav className="nav-menu nav-right">
+        {navLinksRight.map(({ href, label }) => (
+          <a key={href} href={href} className="made-color">
+            {label}
+          </a>
+        ))}
+
+        <div className="lang-switch">
+          <div className="lang-dropdown">
+            <button className="lang-btn" aria-label="Switch Language">
+              <FaGlobe size={16} />
+              <span className="lang-label">
+                {languages.find(lang => lang.code === currentLang)?.label}
+              </span>
+            </button>
+
+            <div className="lang-options">
+              {languages.map(({ code, label }) => (
+                <button
+                  key={code}
+                  className={`lang-option${currentLang === code ? ' active' : ''}`}
+                  onClick={() => switchLanguage(code)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
+
+
+
+Body.js Backup 
+
+// import React from 'react';
+// import './Body.css';
+
+// const Body = () => {
+//   return (
+//     <main>
+//     <div className="body-container">
+//       <h1>Willkommen bei Top Service Cesar</h1>
+//       <h3>Ihr zuverlässiger Partner für Mietwagen, Leiharbeit und Personalvermittlung in Berlin.</h3>
+//       <p>
+//         Wir vermitteln qualifiziertes Personal für verschiedene Branchen, analysieren gemeinsam mit
+//         Ihnen Ihren individuellen Bedarf, um passgenaue Lösungen anzubieten.
+//       </p>
+//       <address>
+//         Uhlandstraße 64<br />
+//         10719 Berlin, Deutschland<br />
+//         Telefon: +49 163 4914343
+//       </address>
+//     </div>
+
+// <div className="image-section">
+//        <img src="/images/Ellipse1.png" alt="" aria-hidden="true" class="corner-image"/>
+//         <img src="/images/Ellipse2.png" alt="" aria-hidden="true" class="corner-image1" />
+//         <img src="/images/Ellipse3.png" alt="" aria-hidden="true" class="cor"/>
+//       </div>
+
+//     </main>
+//   );
+// };
+
+// export default Body;
+
+
+// src/App.js
+
+// function App() {
+//   return (
+//     <Router>
+//        <div className="app-container">
+//        <Header />
+//        <Body />
+//        <Footer />
+//      </div>
+//       <Routes>
+//         {/* Show Home only on the root path */}
+//         <Route path="/" element={<home />} />
+
+//         {/* Show Contact form for all other paths */}
+//         <Route path="/services" element={<Contact />} />
+//         <Route path="/career" element={<Contact />} />
+//         <Route path="/about" element={<Contact />} />
+
+//         {/* Optional fallback */}
+//         <Route path="*" element={<Contact />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
+// import Contact from './components/Contact';
+import './i18n'; 
+
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+function App() {
+  return (
+    <div className="app-container">
+      <Header />
+      <Body />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
+// import Contact from './components/Contact';
+import './i18n'; 
+import Privacy from './components/Privacy';
+import Impressum from './components/Impressum';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Career from './components/Career';
+import About from './components/About';
+ReactDOM.render(<App />, document.getElementById('root'));
+
+function App() {
+  return (
+    // <div className="app-container">
+    //   <Header />
+    //   <Body />
+    //   <Footer />
+    // </div>
+     <Router>
+      <Header />
+      <main>
+        <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/impressum" element={<Impressum />} />
+          </Routes>
+        </div>
+      </main>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
+
+// src/App.js
+
+// function App() {
+//   return (
+//     <Router>
+//        <div className="app-container">
+//        <Header />
+//        <Body />
+//        <Footer />
+//      </div>
+//       <Routes>
+//         {/* Show Home only on the root path */}
+//         <Route path="/" element={<home />} />
+
+//         {/* Show Contact form for all other paths */}
+//         <Route path="/services" element={<Contact />} />
+//         <Route path="/career" element={<Contact />} />
+//         <Route path="/about" element={<Contact />} />
+
+//         {/* Optional fallback */}
+//         <Route path="*" element={<Contact />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+//
+// export default App;

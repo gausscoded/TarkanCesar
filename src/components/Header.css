@@ -1,0 +1,143 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  color: white;
+  flex-wrap: wrap;
+  height: 99px;
+}
+
+.logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-slogan {
+  display: flex;
+  align-items: center;
+  flex:0 0 auto;
+  flex-direction: column;
+  margin-right: 200px;
+}
+.logo-slogan a {
+  text-decoration: none;
+}
+
+.logo {
+  width: 215px;
+  height: 124px;
+}
+
+/* .slogan {
+  font-size: 0.75rem;
+  font-weight: 200;
+  margin-top: -25px;
+  color: #020096;
+} */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  margin-top: center;
+  flex: 2;
+
+}
+.nav-left {
+  flex: 1;
+  justify-content: flex-start;
+  margin-left: 200px;
+}
+.made-color{
+  font-size: 1.2rem;
+  color: #080808;
+  font-family: 'Comfortaa', sans-serif;
+  text-decoration: none;
+}
+
+.nav-right {
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+/* .nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+.nav-menu a:hover {
+  text-decoration: underline;
+} */
+.button3{
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+}
+/* Add to Header.css */
+.lang-switch {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn {
+  background: default;
+  border: default;
+  cursor: pointer;
+  padding: 8px 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.lang-label {
+  margin-left: 6px;
+  font-weight: 500;
+  color: #080808;
+}
+
+.lang-options {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(195, 157, 157, 0.08);
+  z-index: 10;
+  flex-direction: column;
+}
+
+.lang-dropdown:hover .lang-options {
+  display: flex;
+}
+
+.lang-option {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.lang-option.active,
+.lang-option:hover {
+  background: #f0f0f0;
+}

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
+main {
+  flex:1;
+  font-family: 'Inria Sans', sans-serif;
+  background-color: rgba(194, 199, 241, 0.29);
+  /* color: #333; */ 
+  text-align: center;
+  text-shadow: #333;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+
+.body-container {
+  
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  color: #333;
+  max-width: 600px;
+  max-height: 180px;
+  margin-right: 0 auto;
+  line-height: 1.6;
+}
+
+.body-container h1 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.body-container p {
+  font-size: 16px;
+}
+
+.body-container address {
+  margin-top: 20px;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.image-section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.corner-image {
+  position: absolute;
+  top: 152px;
+  right: 3%;
+  width: 352px; /* or whatever size you want */
+  height: auto;
+  z-index: 1; /* Make sure it's on top */
+}
+.corner-image1{
+  position: absolute;
+  top: 375px;
+  right: 18%;
+  width: 275px; /* or whatever size you want */
+  height: auto;
+  z-index: 1; /* Make sure it's on top */
+}
+.corner-image2{
+  position: absolute;
+  top: 400px;
+  right: 3%;
+  width: 275px; /* or whatever size you want */
+  height: auto;
+  z-index: 1; /* Make sure it's on top */
+}
+
